@@ -1,9 +1,12 @@
 #ifndef TIMBER_REWRITE_GAME_H
 #define TIMBER_REWRITE_GAME_H
 
+const int NUM_CLOUDS = 20;
+
 #include "gameWindow.h"
 #include "world.h"
 #include "bee.h"
+#include "cloud.h"
 
 class Game
 {
@@ -15,8 +18,8 @@ public:
     void update();
     void render();
 
- /*   sf::Time getElapsed();
-    void restartClock();*/
+    /*   sf::Time getElapsed();
+       void restartClock();*/
 
     GameWindow* getWindow();
 
@@ -27,6 +30,7 @@ private:
 
     World m_world;
     Bee m_bee;
+    Cloud m_clouds[NUM_CLOUDS];
 };
 
 

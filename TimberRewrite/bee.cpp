@@ -34,7 +34,12 @@ void Bee::fly(sf::Time delta)
     }
     else
     {
-        m_bee.setPosition(m_bee.getPosition().x - (m_beeSpeed* delta.asSeconds()), m_bee.getPosition().y);
+        float max = 0.5f;
+        float min = -0.5f;
+
+        auto variable = min + (rand() % (int)(max - min + 0.5f));
+
+        m_bee.setPosition(m_bee.getPosition().x - (m_beeSpeed* delta.asSeconds()), m_bee.getPosition().y + variable);
 
         if (m_bee.getPosition().x < -100) { m_isActive = false; }
     }
